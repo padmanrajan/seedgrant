@@ -1,0 +1,180 @@
+\documentclass{article}
+%\bibliographystyle{splncs}
+\usepackage[dvips]{graphicx}
+
+\evensidemargin 0.1cm 
+\oddsidemargin 0.1cm 
+\topmargin 0in 
+\textwidth 16.5cm 
+\headheight -0.5in 
+\headsep 0in 
+\textheight 10in 
+\footskip 0.3in
+%\footheight 0.1in 
+
+\renewcommand{\baselinestretch}{1.5} 
+
+\begin{document}
+
+\title{Multimodal Identification of Birds from Visual and Acoustic Data}
+\author{Arnav Bhavsar, Dileep A.~D.~, Padmanabhan Rajan\footnote{Author names
+appear in alphabetic order.}\  \\Multimedia Analytics and Systems Group \\ 
+School of Computing and Electrical Engineering\\
+Indian Institute of Technology Mandi, India}
+
+\date{}
+\maketitle
+%\begin{abstract}
+%\end{abstract}
+
+\section{Introduction}
+
+Biodiversity is central to existence of most natural ecosystems \cite{}, and clearly the impact of human settlements (notwithstanding the nobility of their cause) can create disturbances and large variations in the biodiversity. This realization has led to the scientific study of ecological systems to monitor the diversity, populations, distributions etc. of various components \cite{}. Some of the primary factors in studying ecosystems is observation and identification \cite{}. The inception of scientific study of such factors occurred well before the common availability of advanced technological aids. Thus, traditionally, the observation and identification process had been manual requiring much time and effort \cite{}. 
+
+With the advent of the digital acquisition devices for capturing sights and sounds, the observation aspect has become easier, faster and more reliable. However, the identification component is still largely manual, with experts such as zoologists, ornithologists, botanists etc. manually labeling the acquired data. 
+
+On the other hand, automated identification, labeling, annotating etc. has become commonplace in various human technological endeavors such as biometrics, surveillance, entertainment, navigation, sports etc. Clearly, given the nature of technical progress in more human-centric domains, it is natural to question the relative lack of automated identification aids in study of ecological systems. 
+
+Perhaps, one reason for the relatively low amount of research on automatic identification in the ecological domains, could be simply that, seemingly, such areas may not have been thought of as human-centric and hence the research was not need-driven. However, such a perception is now changing, and the importance of biodiversity studies is clearly being realized \cite{}. A more practical reason is the difficulty in data acquisition as compared to the more conventional domains. Importantly, an aspect which makes such research problems technically challenging, is the very large amount of variations in the data. For instance, there are variations in different entities of the same species, and also spatial and temporal variations of the observed entities. This makes it difficult to model or represent each of the relevant classes in a specific problem, or to develop good classification approaches which can handle possible overlapping representations between classes.
+
+Having described the challenges for pattern recognition research in the ecological domains, it must be acknowledged that the situation is not so grim. Along the course of evolution of machine learning, vision and speech-acoustics research some powerful mathematical tools have been developed such as graphical models, sparse learning, and various advanced feature representation and classification frameworks. 
+As hinted above, these have been applied successfully in various areas such as person identification, scene understanding, speech processing and recognition etc., which also involve, up to some extent, some of the above discussed concerns about variability and resulting ambiguities. 
+
+Indeed, the applications and adaptations of such frameworks have recently been reported for automatic identification tasks in some domains of ecological interests \cite{}. Some example domains that employ visual data include identification and classification of birds, butterflies, plants etc., analysis of animal and insect behaviour \cite{}. Similarly, examples where audio data is employed are xxxx \cite{}.
+
+However, in general, such research is still in its nascent stages, and has much scope for improvements in accuracy and variety of scenarios. At the same time it also provides much scope of intellectually challenging technical progress in terms of developing new tools and frameworks, or adapting existing ones, so as to address the new challenges. Another important perspective is that such research can lead to possibilities of some system development, which we will elaborate on subsequently. Some basic forms of such systems (e.g. website or applications on mobile devices for data collection and analysis) have been setup in recent years \cite{}. However, from a regional point of view, such systems largely focus on the data from the western world, and there is enough scope to develop similar or better systems for the Indian scenario. 
+
+Having provided a general perspective, we acknowledge that each ecological domain and the problems therein requires quite different approaches. In this proposal, we focus on the problem of the detecting and classification of birds. Our interest in considering this problem stems from the following reasons: 
+\begin{itemize}
+\item Our primary motivation to consider this problem is the challenge that it poses in terms of the variety and necessarily unstructured nature of the data. While, as indicated above, interest in this area has been growing, the performance on existing approaches is very modest due to such practical challenges. 
+\item The varied nature of real data, in turn, brings about various technical challenges such as exploring ways to extract/learn the discriminative features, considering and modeling the local inter-relationships between visual bird-body parts, developing frameworks which yields high similarity between similar species, and making the failure cases to be graceful (i.e. more among similar species and less as the specific difference increases), xxxx, etc. 
+\item We are also motivated to consider this problem from the perspective of using both visual and acoustic modalities, which to our knowledge, has not been reported. We believe that sight and sound, in the task of bird detection and identification will compliment each other well and can be an important towards improving the performance. 
+\item Clearly, central to the problem is the availability of data in terms of images/videos and sounds. Some standard public datasets for this purpose are available for the purpose of benchmarking \cite{}. However, these are rather limited and region-specific to the western world (e.g. North America). Also, there is further need for more realism in terms of scale, pose, illumination variations in terms of visual data and xxxx in terms of acoustic data. Thus, over the course of this this project, we also plan to collect data for Indian birds, both in terms of sight and sounds, and make it publicly available.
+\end{itemize}
+ 
+\subsection{Objectives}
+Based on the above discussions, we formulate below, some specific objectives. We provide more details on these in section 3.  
+\begin{enumerate}
+\item Research and algorithm development for detection and identification of birds from images and videos
+\item Research and algorithm development for detection and identification of birds from acoustic data
+\item Integration of 1. and 2. above, into a common approach which can process audio-visual data. 
+\item Constructing datasets of local bird species and making these available to the research community.
+\item Eventually, establishing a web-based system which can use the automated
+approaches, with some manual intervention, for further data collection and management, resulting in continuous improvements.
+\end{enumerate}
+
+\section{Related work}
+As mentioned above, the last few years has seen some modest but conscious effort towards addressing the problem of automatic classification of birds. We briefly discuss below, some related work, in the visual and acoustic domains.
+
+\subsection{Fine-grained visual classification for bird identification}
+From a visual point of view, the automated identification of bird species is one of the important problems considered in an upcoming sub-area of fine-grained visual classification (FGVC) in computer vision. Here, the term `fine-grained' signifies that such classification problems are different (and, arguably, harder) than the traditional visual classification problems. The latter consists of classification at a coarser level of different object entities (e.g. type of vehicle, objects, animals etc.), whereas FGVC is concerned about classification within different species of a particular entity (e.g. car models, bird species etc.).
+
+One of the fundamental aspects in automated classification problems is the \emph{representation} of the entities different classes, in some objective terms (or features) such as shape, texture etc. Clearly, in case of FGVC, global representations of an entity such as the overall shape, morphology, geometry, texture etc. will not be useful for the classification task, since entities belonging to different classes would yield similar global representations. 
+
+Hence, a more logical philosophy followed in exisiting approaches for FGVC is that of considering the representation at a local level. These are typically termed as part-based approaches \cite{}, wherein representative features are extracted from local parts of birds, and these features are then used for further modelling or classification.  
+
+For instance, in the work of \cite{}, a variety of rectangular patches of various widths and heights are sampled, and some features (e.g. SIFT \cite{}) are extracted from these patches extract some. Then, the approach attempts to capture the most discriminative patches, or pairs of patches, using a random forest classifier. Another work in \cite{} also extracts features from a variety of rectangular patches (templates), but then follows a different direction, of computing response maps by matching each training image with the templates from all the images. Some local regions from these response maps are then pooled to form histograms, which are then used for classification via an support vector machine (SVM). The rationale behind this is that templates from a bird species is more likely to match similar bird species than the other. In these methods, there is no consideration of the structure or the relationship of the parts of the object, and there is also a possibility of including some background regions in the rectangular patches, while computing the features. 
+
+In another work \cite{}, a semi-automatic approach is followed to consider the structure of the object (e.g. bird). First, an method which uses a small manual interaction is used to segment the bird from the background. This foreground is then segmented into smaller regions, each one of which appximately covers semantic parts of the bird (e.g. beak, nape etc.), based on some offline landmark information provided for each part. Now, feature descriptors are computed from these segmented regions, and a codebook is learned by pooling the descriptors, which is then used for classification using an SVM.
+     
+Relaizing the importance of learning the most discriminative local features (which to some extent was attempted in \cite{} on unstructured patches), the authors in \cite{}, propose to do the same at the level of semantic features. Here, too the features (e.g. histogram of gradients etc.) are extracted from patches, but the patches are structured around the points denoted by landmarks. The discriminative regions are learned for every two classes, based on the features in those regions, using an SVM, where the SVM also assign weights to each of the region. Also, important in this work is the notion of alignment of the regions across images (by scaling and rotating), based on the landmark points. This is important so that the regions from which the features are extracted coincide approximately in each image. 
+
+The importance of alignment for FGVC of birds is also stressed in \cite{}. Interestingly, in this work, the alignment is carried out based on the global level, by an ellipse fitting on the bird shape. The alignment is then used to transfer the local features and annotated landmarks of all images onto a common reference frame.  
+
+In another interesting work, the primary goal is not the classification, but to translate the objective and mathematically defined features used in FGVC to semantic discriminative body parts, so as to form a visual guidebook to know what discriminative parts to look for. The objective features used in this work are those proposed in \cite{}.
+ 
+\subsection{Bio-acoustic signal analysis for bird identification}
+
+\section*{Introduction to automatic birdsong classification}
+
+Birdsong is one of nature's most well known sounds. Acoustic communication in
+birds is one of the primary ways by which make their presence known to one
+another. Birds serve as important indicators of the health of ecosystems, and
+surveying bird populations can provide valueable inputs for conservation efforts.
+Recently, automatic monitoring of bird populations by means of pattern
+classification algorithms have received much attention. Most birds have
+distinctive calls, which can be used to identify a particular species. Automatic
+birdsong analysis provides several problems for the development of novel machine learning
+and signal processing algorithms.
+
+\section*{A brief summary of existing techniques}
+
+Sounds produced by birds can be complex and varied. A few broad categories of
+sounds have been identified, which are common to most bird sounds
+\cite{brandes_automatedSoundRecording2008}. But there are complexities in the
+form of variations and combinations. There can be simple repetitions of the
+sounds, or random sequences with no repetition.  Additionally, in field
+recordings, there are other sounds, including calls from other birds, as well as
+other natural and man-made sounds. All these factors make automatic birdsong
+classification a non-trivial task. In addition to identifing different species,
+automatated systems have shown some success in identifying individuals
+\emph{within} species \cite{kirschel_territorial2011}.
+
+As in any pattern classification task, there are two stages in building an
+automated birdsong classifier: feature extraction, followed by classification.
+Features used in birdsong classification have ranged from simple features which
+directly measure properties of the audio signal, to features used in automatic
+human speech recognition. Similarly, the classification stage has used
+techniques like Eucledian distance, Bayesian classifiers, hidden Markov models, neural networks and support vector machines.
+
+%\section{Proposed contributions and objectives}
+%Off-line captured images and signals for training
+%Videos with sound for testing: Videos with natural visual and acoustic clutter 
+%Tagging visual instance of birds and their identification
+%Tagging audio instances of birds and their identification
+%Correlating both
+%Detection and identification
+
+
+\section{Proposed methodology and project plan}
+
+Based on the discussion of the related work, we notice some aspects which are clearly important with respect to identification of birds. From a visual identification point of view, these can be summarized as: a) Important of considering local parts, b) formulating some objective feature definitions on these parts, c) learning most discriminative local features, d) Considering the structure and the relationship between the local parts, e) Importance of alignment, f) considering the availability of landmarks or manual annotations. 
+
+Some of the these aspects (e.g. a, b) are considered  in all of the exisiting works, as discussed above, while other aspects (e.g. c-f)  are considered in some but not all. In any case, given the adolesence of the area, there is still much scope of further explorations on these aspects. Here, we propose and briefly discuss some directions which we would like to explore: $<$2-3 lines required for each of the points below$>$.
+\begin{itemize}
+\item Modelling and learning relationships between all the parts via graphical models.\\ Considering more than pairs of parts as in existing approaches. %(e.g. as considered pose/activity recognition)
+\item Sparse or group-sparse representation frameworks:\\ learning discrimitative parts, final classification.
+\item Considering cases with or without landmarks/annotations. \\Using high confidence cases as landmarked or annotated examples.
+\item Comparative analysis between low-level feature descriptor.\\ There is no standardization or review yet for FGVC of birds.
+\item Feature selection and combination: Select the best image features and sound features for the pool of features using the differnt techniques including multiple kernel learning and combime the selected features from image domain and sound domain using informatin theoretic methods and multiple kernel leraning. 
+\item Classifiers: Gaussin mixture models, neural networks, $K$-nearest neighbour classifieer, support vector machines using Gaussin kernel, kernels for images and kernels for sound/speech signals. 
+\item Building classifieers to identify birds: Information of the birds are available through the images and the sounds. We propose to identify the birds using following approaches:
+\begin{itemize}
+    \item Classify the birds from the images represented using the different features using different classifiers mentioned above.  
+    \item Classify the birds from their sounds represented using the different features using different classifiers mentioned above. 
+    \item Combine the classifier scores of the different classifiers built on both image and sound of birds
+    \item Multimodal classification:  Use the both image and sound data to build classifier
+\end{itemize}
+\item Guaging how much role does features or classifiers play.
+\end{itemize}
+
+
+%selecting the most discriminative features
+
+%Algorithm development for identification from off-line images and signals
+%Algorithm development for detecting visual and audio instances in real videos
+%Algorithms for identification using frames from real but simplistic videos
+
+\section{Distribution of funds for this project}
+
+\section{Discussion: Future work for a larger project grant}
+
+Further challenges:\\
+Handling audio-visual clutter\\
+Handling inter-class clutter for audio data\\
+Handling finer specific variations \ \\ \ \\
+Research in improvements for algorithms:\\
+Considering higher complexity by adding more classes \ \\ \ \\
+System development:\\
+Implementing a real system for bird identification\\
+A website where for maintaining a bird database and an online identification system\\
+Considering for generalizing for other wildlife\ \\
+
+
+\begin{thebibliography}{100}
+
+%\bibitem{n1} Pentland. A.P., \emph{A new sense for depth of field}, IEEE Transactions on Pattern Analysis and Machine Intelligence, 1987, Vol 6, No 4, pp 523-531.
+
+\end{thebibliography}
+    
+\end{document}

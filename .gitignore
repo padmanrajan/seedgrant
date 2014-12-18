@@ -1,0 +1,8 @@
+.gitignore
+*.swp
+*.log
+*.bbl
+*.blg
+*.dvi
+*.aux
+
