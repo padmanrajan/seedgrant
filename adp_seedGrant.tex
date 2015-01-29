@@ -146,22 +146,24 @@ techniques like Eucledian distance, Bayesian classifiers, hidden Markov models, 
 
 Based on the discussion of the related work, we notice some aspects which are clearly important with respect to identification of birds. From a visual identification point of view, these can be summarized as: a) Important of considering local parts, b) formulating some objective feature definitions on these parts, c) learning most discriminative local features, d) Considering the structure and the relationship between the local parts, e) Importance of alignment, f) considering the availability of landmarks or manual annotations. 
 
-Some of the these aspects (e.g. a, b) are considered  in all of the exisiting works, as discussed above, while other aspects (e.g. c-f)  are considered in some but not all. In any case, given the adolesence of the area, there is still much scope of further explorations on these aspects. Here, we propose and briefly discuss some directions which we would like to explore: $<$2-3 lines required for each of the points below$>$.
+Some of the these aspects (e.g. a, b) are considered  in all of the exisiting works, as discussed above, while other aspects (e.g. c-f)  are considered in some but not all. In any case, given the adolesence of the area, there is still much scope of further explorations on these aspects. Here, we propose and briefly discuss some directions which we would like to explore: 
 \begin{itemize}
-\item Modelling and learning relationships between all the parts via graphical models.\\ Considering more than pairs of parts as in existing approaches. %(e.g. as considered pose/activity recognition)
-\item Sparse or group-sparse representation frameworks:\\ learning discrimitative parts, final classification.
-\item Considering cases with or without landmarks/annotations. \\Using high confidence cases as landmarked or annotated examples.
-\item Comparative analysis between low-level feature descriptor.\\ There is no standardization or review yet for FGVC of birds.
-\item Feature selection and combination: Select the best image features and sound features for the pool of features using the differnt techniques including multiple kernel learning and combime the selected features from image domain and sound domain using informatin theoretic methods and multiple kernel leraning. 
-\item Classifiers: Gaussin mixture models, neural networks, $K$-nearest neighbour classifieer, support vector machines using Gaussin kernel, kernels for images and kernels for sound/speech signals. 
-\item Building classifieers to identify birds: Information of the birds are available through the images and the sounds. We propose to identify the birds using following approaches:
+\item Modelling relationships between all the parts via graphical models: While individual parts or pair-wise relationships between parts are considered in existing state-of-the-art, higher level relationships between parts are not. Thus, a possible direction for further exploration is modeling a higher level body structure using graphical models (Markov random fields or conditional random fields). Indeed, such higher order models between parts do exists in computer vision but in a different context of human pose/activity recognition. We would like to explore this in our context of FGVC for birds.
+\item Considering cases with or without landmarks/annotations: In a real-world scenario, often we may not have annotations (or manual part marking). Thus, it would be useful to develop methods for such cases. Thus, the task of bird segmentation or automatic part identification are also involved in such a scenario. Interestingly, this issue has not been considered in any of the existing works. These may be seen as a unsupervised low-level feature detection or segmentation problem, or learning the segmentation labels or feature characteristics from a high confidence landmarked or annotated examples.
+\item Feature selection and combination: Many kinds of feature descriptors can be used in both audio and visual data, and the effectiveness of feature descriptor varies with the problem domain. Thus, an interesting direction is that of selecting the best image features and sound features for the pool of features using the differnt techniques including multiple kernel learning and combine the selected features from image domain and sound domain using informatin theoretic methods and multiple kernel leraning. 
+\item Comparative analysis between low-level feature descriptor: There is no standardization or review yet for FGVC of birds. In would be interesting and informative, as a part of this project to work on such an exhaustive survey, especially also because the area is gaining popularity in the vision and speech community.
+\item Classifiers: There are various classifiers that can be explored for this task. Some well-known examples are Gaussin mixture models, neural networks, $K$-nearest neighbour classifieer, support vector machines using Gaussin kernel, kernels for images and kernels for sound/speech signals, sparse-representation based classifiers. Some of these classifiers can also be used to learn better discriminative features. \ \\ \ \\
+%\item Building classifieers to identify birds: Information of the birds are available through the images and the sounds. We propose to identify the birds using following approaches:
+Thus, based on the above discussion about various directions, we summarize the methodlogical aspects of our proposal: 
 \begin{itemize}
-    \item Classify the birds from the images represented using the different features using different classifiers mentioned above.  
+		\item Feature selection and feature detection/segmentation (the latter in case of non-annotated data) for image and sound data. 
+    \item Classification of birds from images represented using the different features using different classifiers mentioned above.  
     \item Classify the birds from their sounds represented using the different features using different classifiers mentioned above. 
-    \item Combine the classifier scores of the different classifiers built on both image and sound of birds
-    \item Multimodal classification:  Use the both image and sound data to build classifier
+    \item Combine the classifier scores of the different classifiers built on both image and sound of birds.
+    \item Multimodal classification: Use the both image and sound data to build classifier.
+    \item Guaging how much role does features or classifiers play.
+    \item Review of features and classifiers.
 \end{itemize}
-\item Guaging how much role does features or classifiers play.
 \end{itemize}
 
 
