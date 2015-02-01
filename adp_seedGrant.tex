@@ -82,17 +82,17 @@ From a visual point of view, the automated identification of bird species is one
 
 One of the fundamental aspects in automated classification problems is the \emph{representation} of the entities different classes, in some objective terms (or features) such as shape, texture etc. Clearly, in case of FGVC, global representations of an entity such as the overall shape, morphology, geometry, texture etc. will not be useful for the classification task, since entities belonging to different classes would yield similar global representations. 
 
-Hence, a more logical philosophy followed in exisiting approaches for FGVC is that of considering the representation at a local level. These are typically termed as part-based approaches \cite{}, wherein representative features are extracted from local parts of birds, and these features are then used for further modelling or classification.  
+Hence, a more logical philosophy followed in exisiting approaches for FGVC is that of considering the representation at a local level. These are typically termed as part-based approaches \cite{dpm,hierarchy,poof,random}, wherein representative features are extracted from local parts of birds, and these features are then used for further modelling or classification.  
 
 For instance, in the work of \cite{}, a variety of rectangular patches of various widths and heights are sampled, and some features (e.g. SIFT \cite{}) are extracted from these patches extract some. Then, the approach attempts to capture the most discriminative patches, or pairs of patches, using a random forest classifier. Another work in \cite{} also extracts features from a variety of rectangular patches (templates), but then follows a different direction, of computing response maps by matching each training image with the templates from all the images. Some local regions from these response maps are then pooled to form histograms, which are then used for classification via an support vector machine (SVM). The rationale behind this is that templates from a bird species is more likely to match similar bird species than the other. In these methods, there is no consideration of the structure or the relationship of the parts of the object, and there is also a possibility of including some background regions in the rectangular patches, while computing the features. 
 
 In another work \cite{}, a semi-automatic approach is followed to consider the structure of the object (e.g. bird). First, an method which uses a small manual interaction is used to segment the bird from the background. This foreground is then segmented into smaller regions, each one of which appximately covers semantic parts of the bird (e.g. beak, nape etc.), based on some offline landmark information provided for each part. Now, feature descriptors are computed from these segmented regions, and a codebook is learned by pooling the descriptors, which is then used for classification using an SVM.
      
-Relaizing the importance of learning the most discriminative local features (which to some extent was attempted in \cite{} on unstructured patches), the authors in \cite{}, propose to do the same at the level of semantic features. Here, too the features (e.g. histogram of gradients etc.) are extracted from patches, but the patches are structured around the points denoted by landmarks. The discriminative regions are learned for every two classes, based on the features in those regions, using an SVM, where the SVM also assign weights to each of the region. Also, important in this work is the notion of alignment of the regions across images (by scaling and rotating), based on the landmark points. This is important so that the regions from which the features are extracted coincide approximately in each image. 
+Relaizing the importance of learning the most discriminative local features (which to some extent was attempted in \cite{} on unstructured patches), the authors in \cite{poof}, propose to do the same at the level of semantic features. Here, too the features (e.g. histogram of gradients etc.) are extracted from patches, but the patches are structured around the points denoted by landmarks. The discriminative regions are learned for every two classes, based on the features in those regions, using an SVM, where the SVM also assign weights to each of the region. Also, important in this work is the notion of alignment of the regions across images (by scaling and rotating), based on the landmark points. This is important so that the regions from which the features are extracted coincide approximately in each image. 
 
-The importance of alignment for FGVC of birds is also stressed in \cite{}. Interestingly, in this work, the alignment is carried out based on the global level, by an ellipse fitting on the bird shape. The alignment is then used to transfer the local features and annotated landmarks of all images onto a common reference frame.  
+The importance of alignment for FGVC of birds is also stressed in \cite{align}. Interestingly, in this work, the alignment is carried out based on the global level, by an ellipse fitting on the bird shape. The alignment is then used to transfer the local features and annotated landmarks of all images onto a common reference frame.  
 
-In another interesting work, the primary goal is not the classification, but to translate the objective and mathematically defined features used in FGVC to semantic discriminative body parts, so as to form a visual guidebook to know what discriminative parts to look for. The objective features used in this work are those proposed in \cite{}.
+In another interesting work \cite{crow}, the primary goal is not the classification, but to translate the objective and mathematically defined features used in FGVC to semantic discriminative body parts, so as to form a visual guidebook to know what discriminative parts to look for. The objective features used in this work are those proposed in \cite{poof}.
  
 \subsection{Bio-acoustic signal analysis for bird identification}
 
@@ -148,11 +148,11 @@ Based on the discussion of the related work, we notice some aspects which are cl
 
 Some of the these aspects (e.g. a, b) are considered  in all of the exisiting works, as discussed above, while other aspects (e.g. c-f)  are considered in some but not all. In any case, given the adolesence of the area, there is still much scope of further explorations on these aspects. Here, we propose and briefly discuss some directions which we would like to explore: 
 \begin{itemize}
-\item Modelling relationships between all the parts via graphical models: While individual parts or pair-wise relationships between parts are considered in existing state-of-the-art, higher level relationships between parts are not. Thus, a possible direction for further exploration is modeling a higher level body structure using graphical models (Markov random fields or conditional random fields). Indeed, such higher order models between parts do exists in computer vision but in a different context of human pose/activity recognition. We would like to explore this in our context of FGVC for birds.
+\item Modelling relationships between all the parts via graphical models: While individual parts or pair-wise relationships between parts are considered in existing state-of-the-art, higher level relationships between parts are not. Thus, a possible direction for further exploration is modeling a higher level body structure using graphical models (Markov random fields or conditional random fields) \cite{mrfbook,mrf,crf}. Indeed, such higher order models between parts do exists in computer vision but in a different context of human pose/activity recognition \cite{mrfpose}. We would like to explore this in our context of FGVC for birds.
 \item Considering cases with or without landmarks/annotations: In a real-world scenario, often we may not have annotations (or manual part marking). Thus, it would be useful to develop methods for such cases. Thus, the task of bird segmentation or automatic part identification are also involved in such a scenario. Interestingly, this issue has not been considered in any of the existing works. These may be seen as a unsupervised low-level feature detection or segmentation problem, or learning the segmentation labels or feature characteristics from a high confidence landmarked or annotated examples.
 \item Feature selection and combination: Many kinds of feature descriptors can be used in both audio and visual data, and the effectiveness of feature descriptor varies with the problem domain. Thus, an interesting direction is that of selecting the best image features and sound features for the pool of features using the differnt techniques including multiple kernel learning and combine the selected features from image domain and sound domain using informatin theoretic methods and multiple kernel leraning. 
 \item Comparative analysis between low-level feature descriptor: There is no standardization or review yet for FGVC of birds. In would be interesting and informative, as a part of this project to work on such an exhaustive survey, especially also because the area is gaining popularity in the vision and speech community.
-\item Classifiers: There are various classifiers that can be explored for this task. Some well-known examples are Gaussin mixture models, neural networks, $K$-nearest neighbour classifieer, support vector machines using Gaussin kernel, kernels for images and kernels for sound/speech signals, sparse-representation based classifiers. Some of these classifiers can also be used to learn better discriminative features. \ \\ \ \\
+\item Classifiers: There are various classifiers that can be explored for this task (e.g. \cite{duda}). Some well-known examples are Gaussian mixture models, neural networks, $K$-nearest neighbour classifieer, support vector machines using Gaussin kernel, kernels for images and kernels for sound/speech signals, sparse-representation based classifiers \cite{sparse}. Some of these classifiers can also be used to learn better discriminative features. \ \\ \ \\
 %\item Building classifieers to identify birds: Information of the birds are available through the images and the sounds. We propose to identify the birds using following approaches:
 Thus, based on the above discussion about various directions, we summarize the methodlogical aspects of our proposal: 
 \begin{itemize}
@@ -194,28 +194,52 @@ Considering for generalizing for other wildlife\ \\
 
 %%% Arnavs bib begins here
 
-\bibitem{n1} 
+\bibitem{poof} 
 T. Berg, P. Belhumeur., \emph{POOF: Part-based one-vs-one features for fine-grained categorization, face verification, and attribute estimation}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2013), pp. 955--962, 2013. 
 
-\bibitem{n2} 
+\bibitem{birdsnap} 
 T. Berg, J. Liu, S. Woo Lee, M. Alexander, D. Jacobs, P. Belhumeur., \emph{Birdsnap: Large-scale fine-grained visual categorization of birds}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2014), pp. 2019--2026, 2014. 
 
-\bibitem{n3} 
+\bibitem{crow} 
 T. Berg, P. Belhumeur., \emph{How do you tell a blackbird from a crow?}, IEEE International Conference on Computer Vision, (ICCV 2014), pp. 729--736, 2014. 
 
-\bibitem{n4} 
+\bibitem{dpm} 
 N. Zhang, R. Farrell, F. Iandola, T. Darrell., \emph{Deformable part descriptors for fine-grained recognition and attribute prediction}, IEEE International Conference on Computer Vision, (ICCV 2013), 2014. 
 
-\bibitem{n5} 
+\bibitem{align} 
 E. Gavves, B. Fernando, C. Snoek, A. Smeulders, T. Tuytelaars., \emph{Fine-grained categorization by alignments}, IEEE International Conference on Computer Vision, (ICCV 2013), 2013. 
 
-\bibitem{n6} 
+\bibitem{hierarchy} 
 L. Xie, Q. Tian, R. Hong, S. Yan, B. Zhang., \emph{Hierarchical part matching for fine-grained visual categorization}, IEEE International Conference on Computer Vision, (ICCV 2013), 2013. 
 
-\bibitem{n7} 
+\bibitem{codebookfree} 
 B. Yao, G. Bradski, L. Fei-Fei., \emph{A codebook-free and annotation-free approach for fine-grained image categorization}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2012), 2012. 
 
-\bibitem{n7} 
+\bibitem{random} 
+B. Yao, A. Khosla, L. Fei-Fei., \emph{Combining randomization and discrimination for fine-grained image categorization}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2011), 2011. 
+
+\bibitem{mrfbook} 
+S.Z. Li., \emph{Markov random field modeling in computer vision}, Springer-Verlag, 1995. 
+
+\bibitem{mrf} 
+P. Kohli, C. Rother., \emph{Higher-order models in Computer Vision}, In: O. Lezoray, L. Grady. (Eds.), Image Processing and Analysing Graphs: Theory and Practice, CRC Press, 2012. 
+
+\bibitem{hmrf} 
+C. Wang., \emph{Distributed and higher-order graphical models}, PhD Thesis, Ecole Centrale Paris, 2011.
+
+\bibitem{crf} 
+X. He, R. Zemel, M.Carreira-Perpinan., \emph{Multiscale conditional random fields for image labeling}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2004), pp. II-695--II-702, 2004. 
+
+\bibitem{crf1} 
+X. He, R. Zemel, M.Carreira-Perpinan., \emph{Multiscale conditional random fields for image labeling}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2004), pp. II-695--II-702, 2004. 
+
+\bibitem{mrfpose} 
+M. Bray, P. Kohli, P. Torr., \emph{PoseCut: Simultaneous segmentation and 3D pose estimation of humans using dynamic graph-cuts}, European Conference on Computer Vision, (ECCV 2006), 2006. 
+
+\bibitem{sparse} 
+B. Yao, A. Khosla, L. Fei-Fei., \emph{Combining randomization and discrimination for fine-grained image categorization}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2011), 2011. 
+
+\bibitem{duda} 
 B. Yao, A. Khosla, L. Fei-Fei., \emph{Combining randomization and discrimination for fine-grained image categorization}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2011), 2011. 
 
 
