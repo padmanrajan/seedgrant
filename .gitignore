@@ -1,4 +1,5 @@
 .gitignore
+*.pdf
 *.swp
 *.log
 *.bbl
