@@ -1,6 +1,7 @@
 \documentclass{article}
 %\bibliographystyle{splncs}
 \usepackage[dvips]{graphicx}
+\usepackage{url}
 % comment
 % comment 2
 \evensidemargin 0.1cm 
@@ -169,6 +170,8 @@ Based on the discussion of the related work, we notice some aspects which are
 clearly important with respect to identification of birds.
 
 \subsection{Visual classification}
+\label{subsec:visual}
+
 From a visual identification point of view, these can be summarized as: a)
 Important of considering local parts, b) formulating some objective feature
 definitions on these parts, c) learning most discriminative local features, d)
@@ -208,6 +211,21 @@ informative, as a part of this project to work on such an exhaustive survey,
 especially also because the area is gaining popularity in the vision and speech
 community.
 
+\item FGVC using dynamic kernel based SVM: For the efficient FGVC of birds, the
+images are represented using local features. As a result an image is represented
+as set of local feature vectors. Since the numbers of local feature vectors in
+the set is different for different images, this leads to varying length pattern
+classification. This gives an apportunity to explore the dynamic
+kernels~\cite{DK_2003_MK_Wallraven}, that are constructed between the a pair of
+sets of local feature vectors, for FGVC. Some of the popular dynaic kernels used
+in the varying length pattern classification using SVM are intermedate matching
+kernel (IMK)~\cite{IMK_2014_DAD_CC}, pyramid match kernel
+(PMK)~\cite{PMK_2007_Grauman}, spacial pyramid match
+kernel~\cite{SPMK_2006_Lazebnik} etc. We explore these dymanic kernel based SVMs
+in the context of FGVC for birds. We also explore these dynamic kernels for
+matching the two bird images. This also give a scope to design dymanic kernels
+specific to  FGVC task. 
+
 \end{itemize}
 
 \subsection{Birdsong identification}
@@ -226,14 +244,25 @@ resonances of the vocal tract. Bird vocalizations also show characteristic
 formant information. Features that capture formant information (eg.~group delay
 based representations \cite{padmanAllPoleGDelay, hegdeModgdf}) show great potential in
 automatic identification of bird calls.
+
+\item Birdsong identification using dynamic kernel based SVM: Similar images,
+speech signals are also represented as sets/sequences of local feature vectors.
+We  explore dynamic kernels mentioned in the section \ref{subsec:visual} for birdsong
+identification as well as for matching.  
+
 \end{itemize}
+
+
+
+
 
 \subsection{Feature selection and combination}
 
 Many kinds of feature descriptors can be used in both audio and visual data, and
 the effectiveness of feature descriptor varies with the problem domain. Thus, an
 obvious direction of research is on fusing the information from the audio and visual domains.
-These can include information-theoretic methods and multiple-kernel learning ?
+These can include information-theoretic methods and multiple-kernel learning
+\cite{LargeScaleMKL,mkl2}.
 
 %direction is that of selecting the best image features and sound
 %features for the pool of features using the different techniques including
@@ -344,87 +373,198 @@ Total & 20.0 \\
 %%% Arnavs bib begins here
 
 \bibitem{monitor1}
-G. Witmer., \emph{Wildlife population monitoring: Some practical considerations}, Wildlife Research, 32, pp. 259--263, 2005. 
+G. Witmer., 
+Wildlife population monitoring: Some practical considerations,
+\emph{Wildlife Research}, 32, pp. 259--263, 2005. 
 
 \bibitem{monitor2}
-M. Bose., \emph{Common bird monitoring of India: A novel citizen science program}, Science Reporter, pp. 28--31, 2012. 
+M. Bose., 
+Common bird monitoring of India: A novel citizen science program, 
+\emph{Science Reporter}, pp. 28--31, 2012. 
 
 \bibitem{monitor3}
-M. Ancrenaz, A.J. Hearn, J. Ross, R. Sollmann, A. Wilting., \emph{Handbook for wildlife monitoring using camera-traps}, BBEC Publication, 2012. 
+M. Ancrenaz, A.J. Hearn, J. Ross, R. Sollmann, A. Wilting., 
+Handbook for wildlife monitoring using camera-traps,
+\emph{BBEC Publication}, 2012. 
 
 \bibitem{monitor4}
-Cornell Lab of Ornithology., \emph{Annual report 2011}, 2011. 
+Annual report,
+\emph{Cornell Lab of Ornithology}, 2011.
 
 \bibitem{human1} 
-M. Chesser., \emph{An investigation of human-error rates in wildlife photographic identification; Implications for the use of citizen scientists}, Masters Theses, University of Massachusetts Amherst, 2012. 
+M. Chesser., 
+An investigation of human-error rates in wildlife photographic identification; 
+Implications for the use of citizen scientists, 
+\emph{Masters Theses, University of Massachusetts Amherst}, 2012. 
 
 \bibitem{human2} 
-N.J. Silvy, R.R. Lopez, M.J. Peterson., \emph{Wildlife marking techniques}, Techniques for Wildlife Investigations and Management. Bethesda: The Wildlife Society, pp. 339--363, 2005. 
+N.J. Silvy, R.R. Lopez, M.J. Peterson., 
+Wildlife marking techniques, 
+\emph{Techniques for Wildlife Investigations and Management. Bethesda: The
+Wildlife Society},
+pp. 339--363, 2005. 
 
 \bibitem{poof} 
-T. Berg, P. Belhumeur., \emph{POOF: Part-based one-vs-one features for fine-grained categorization, face verification, and attribute estimation}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2013), pp. 955--962, 2013. 
+T. Berg, P. Belhumeur., 
+POOF: Part-based one-vs-one features for fine-grained categorization, 
+face verification, and attribute estimation,
+\emph{IEEE International Conference on Computer Vision and Pattern Recognition},
+pp. 955--962, 2013. 
 
 \bibitem{crow} 
-T. Berg, P. Belhumeur., \emph{How do you tell a blackbird from a crow?}, IEEE International Conference on Computer Vision, (ICCV 2014), pp. 729--736, 2014. 
+T. Berg, P. Belhumeur., 
+How do you tell a blackbird from a crow?, 
+\emph{IEEE International Conference on Computer Vision},
+pp. 729--736, 2014. 
 
 \bibitem{dpm} 
-N. Zhang, R. Farrell, F. Iandola, T. Darrell., \emph{Deformable part descriptors for fine-grained recognition and attribute prediction}, IEEE International Conference on Computer Vision, (ICCV 2013), 2014. 
+N. Zhang, R. Farrell, F. Iandola, T. Darrell., 
+Deformable part descriptors for fine-grained recognition and attribute prediction, 
+\emph{IEEE International Conference on Computer Vision}, 2014. 
 
 \bibitem{align} 
-E. Gavves, B. Fernando, C. Snoek, A. Smeulders, T. Tuytelaars., \emph{Fine-grained categorization by alignments}, IEEE International Conference on Computer Vision, (ICCV 2013), 2013. 
+E. Gavves, B. Fernando, C. Snoek, A. Smeulders, T. Tuytelaars., 
+Fine-grained categorization by alignments, 
+\emph{IEEE International Conference on Computer Vision}, 2013. 
 
 \bibitem{hierarchy} 
-L. Xie, Q. Tian, R. Hong, S. Yan, B. Zhang., \emph{Hierarchical part matching for fine-grained visual categorization}, IEEE International Conference on Computer Vision, (ICCV 2013), 2013. 
+L. Xie, Q. Tian, R. Hong, S. Yan, B. Zhang., 
+Hierarchical part matching for fine-grained visual categorization, 
+\emph{IEEE International Conference on Computer Vision}, 2013. 
 
 \bibitem{codebookfree} 
-B. Yao, G. Bradski, L. Fei-Fei., \emph{A codebook-free and annotation-free approach for fine-grained image categorization}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2012), 2012. 
+B. Yao, G. Bradski, L. Fei-Fei., 
+A codebook-free and annotation-free approach for fine-grained image categorization, 
+\emph{IEEE International Conference on Computer Vision and Pattern Recognition},
+2012. 
 
 \bibitem{random} 
-B. Yao, A. Khosla, L. Fei-Fei., \emph{Combining randomization and discrimination for fine-grained image categorization}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2011), 2011. 
+B. Yao, A. Khosla, L. Fei-Fei., 
+Combining randomization and discrimination for fine-grained image categorization,
+\emph{IEEE International Conference on Computer Vision and Pattern Recognition}, 2011. 
 
 \bibitem{cub} 
-P. Welinder, S. Branson, T. Mita, C. Wah, F. Schroff, S. Belongie, P. Perona. \emph{Caltech-UCSD Birds 200}, Technical Report, California Institute of Technology, CNS-TR-2010-001, 2010. 
+P. Welinder, S. Branson, T. Mita, C. Wah, F. Schroff, S. Belongie, P. Perona. 
+Caltech-UCSD Birds 200, 
+\emph{Technical Report, California Institute of Technology},
+CNS-TR-2010-001, 2010. 
 
 \bibitem{birdsnap} 
-Columbia University and the University of Maryland. \emph{BIRDSNAP: An Electronic Field Guide to Birds}, www.birdsnap.com, 2014. 
+BIRDSNAP: An Electronic Field Guide to Birds, \url{www.birdsnap.com}, 
+\emph{Columbia University and the University of Maryland},
+2014. 
 
 \bibitem{leaf} 
-S.G. Wu, F.S. Bao, E.Y. Xu, Y. Wang, Y. Chang, Q. Xiang., \emph{A leaf recognition algorithm for plant classification using probabilistic neural network}, International Symposium on Signal Processing and Information Technology, 2007. 
+S.G. Wu, F.S. Bao, E.Y. Xu, Y. Wang, Y. Chang, Q. Xiang.,
+A leaf recognition algorithm for plant classification using probabilistic neural network,
+\emph{International Symposium on Signal Processing and Information Technology}, 2007. 
 
 \bibitem{butterfly} 
-J. Wang, K. Markert, M. Everingham., \emph{Learning models for object recognition from natural language descriptions}, British Machine Vision Conference, (BMVC 2009), 2009. 
+J. Wang, K. Markert, M. Everingham., 
+Learning models for object recognition from natural language descriptions, 
+\emph{British Machine Vision Conference}, 2009. 
 
 \bibitem{mrfbook} 
-S.Z. Li., \emph{Markov random field modeling in computer vision}, Springer-Verlag, 1995. 
+S.Z. Li., Markov random field modeling in computer vision, 
+\emph{Springer-Verlag}, 1995. 
 
 \bibitem{mrf} 
-P. Kohli, C. Rother., \emph{Higher-order models in Computer Vision}, In: O. Lezoray, L. Grady. (Eds.), Image Processing and Analysing Graphs: Theory and Practice, CRC Press, 2012. 
+P. Kohli, C. Rother., 
+Higher-order models in Computer Vision, 
+\emph{O. Lezoray, L. Grady. (Eds.),
+Image Processing and Analysing Graphs: Theory and Practice, CRC Press},
+2012. 
 
 \bibitem{hmrf} 
-C. Wang., \emph{Distributed and higher-order graphical models}, PhD Thesis, Ecole Centrale Paris, 2011.
+C. Wang., 
+Distributed and higher-order graphical models, 
+\emph{PhD Thesis, Ecole Centrale Paris,} 2011.
 
 \bibitem{crf} 
-X. He, R. Zemel, M.Carreira-Perpinan., \emph{Multiscale conditional random fields for image labeling}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2004), pp. II-695--II-702, 2004. 
+X. He, R. Zemel, M.Carreira-Perpinan., 
+Multiscale conditional random fields for image labeling, 
+\emph{IEEE International Conference on Computer Vision and Pattern Recognition},
+2004. 
 
 \bibitem{crf1} 
-J. Verbeek and B. Triggs., \emph{Scene segmentation with conditional random fields learned from partially labeled images}, Conference on Neural Information Processing Systems (NIPS 2007), 2007. 
+J. Verbeek and B. Triggs., 
+Scene segmentation with conditional random fields learned from partially labeled images, 
+\emph{Conference on Neural Information Processing Systems}, 2007. 
 
 \bibitem{mrfpose} 
-M. Bray, P. Kohli, P. Torr., \emph{PoseCut: Simultaneous segmentation and 3D pose estimation of humans using dynamic graph-cuts}, European Conference on Computer Vision, (ECCV 2006), 2006. 
+M. Bray, P. Kohli, P. Torr., 
+PoseCut: Simultaneous segmentation and 3D pose estimation of humans using dynamic graph-cuts,
+\emph{European Conference on Computer Vision}, 2006. 
 
 \bibitem{sparse} 
-J. Wright, A.Y. Yang, A. Ganesh, S. Sastry, Y. Ma., \emph{Robust face recognition via sparse representation}, IEEE Transactions on Pattern Analysis and Machine Intelligence, (PAMI 2009), 2009. 
+J. Wright, A.Y. Yang, A. Ganesh, S. Sastry, Y. Ma., 
+Robust face recognition via sparse representation, 
+\emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, 2009. 
 
 \bibitem{sparse1} 
-R. Rigamonti, M.A. Brown, V. Lepetit., \emph{Are sparse representations really relevant for image classification ?}, IEEE International Conference on Computer Vision and Pattern Recognition, (CVPR 2011), 2011. 
+R. Rigamonti, M.A. Brown, V. Lepetit., 
+Are sparse representations really relevant for image classification?, 
+\emph{IEEE International Conference on Computer Vision and Pattern Recognition},
+2011. 
 
 \bibitem{duda} 
-R. Duda, P. Hart, D. Stark., \emph{Pattern Classification}, John Wiley and Sons Inc., 2000. 
+R. Duda, P. Hart, D. Stark., Pattern Classification, 
+\emph{John Wiley and Sons Inc.}, 2000. 
 
 
 
 
 %% Dileep's bib begins here
+
+\bibitem{DK_2003_MK_Wallraven}
+Christian Wallraven and Barbara Caputo and Arnulf Graf,
+Recognition with Local Features: The Kernel Recipe,
+\emph{Proceedings of the Ninth IEEE International Conference on Computer Vision},
+2003
+
+
+\bibitem{IMK_2014_DAD_CC} 
+Dileep, A.D. and Chandra Sekhar, C., 
+{GMM}-Based Intermediate Matching Kernel for Classification of Varying Length 
+Patterns of Long Duration Speech Using Support Vector Machines, 
+\emph{IEEE Transactions on Neural Networks and Learning Systems}, 25(8),
+2014. 
+
+\bibitem{PMK_2007_Grauman},
+Kristen Grauman and Trevor Darrell,
+The Pyramid Match Kernel: Efficient Learning with Sets of Features,
+\emph{"Journal of Machine Learning Research},
+8, 2007
+
+\bibitem{SPMK_2006_Lazebnik} 
+Lazebnik, S. and Schmid, C. and Ponce, J.,
+Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories, 
+\emph{IEEE Computer Society Conference on Computer Vision and Pattern Recognition}, 
+2006
+
+
+\bibitem{LargeScaleMKL}
+S\"{o}ren Sonnenburg and Gunnar R\"{a}tsch and Christin Sch\"{a}fer and Bernhard Sch\"{o}lkopf,
+Large Scale Multiple Kernel Learning,
+\emph{Journal of Machine Learning Research},
+ 7, 2006
+
+\bibitem{mkl2},
+A. Rakotomamonjy, F. R. Bach, S. Canu, and Y. Grandvalet, 
+SimpleMKL,
+\emph{Journal of Machine Learning Research}, 
+9, 2008.
+
+\bibitem{simpleMKL},
+A. Rakotomamonjy and F. R. Bach and S. Canu and Y. Grandvalet,
+Simple{MKL},
+\emph{Journal of Machine Learning Research},
+ 9, 2008
+
+
+
+
+
 
 
 
@@ -519,9 +659,6 @@ Automated Acoustic Classification of Bird Species from Real-Field Recordings,
 Neal, Lawrence and Briggs, Forrest and Raich, Raviv and Fern, Xiaoli Z,
 Time-frequency segmentation of bird song in noisy acoustic environments,
 \emph{Proc. ICASSP}, 2011
-
-
-
 
 
 
