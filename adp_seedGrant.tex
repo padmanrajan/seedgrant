@@ -23,7 +23,7 @@
 appear in alphabetic order.}\  \\Multimedia Analytics and Systems Group \\ 
 School of Computing and Electrical Engineering\\
 Indian Institute of Technology Mandi, India\\
-\texttt{\{arnav, dileepad, padman\}@iitmandi.ac.in}}
+\texttt{\{arnav, addileep, padman\}@iitmandi.ac.in}}
 
 \date{}
 \maketitle
@@ -185,7 +185,7 @@ Hence, a more logical philosophy followed in existing approaches for FGVC is
 that of considering the representation at a local level. These are typically
 termed as part-based approaches \cite{dpm,hierarchy,poof,random,codebookfree},
 wherein representative features are extracted from local parts of birds, and
-these features are then used for further modelling or classification.  
+these features are then used for further modeling or classification.  
 
 For instance, in the work of \cite{random}, a variety of rectangular patches of
 various widths and heights are sampled, and some features (e.g. SIFT, HOG
@@ -207,7 +207,7 @@ consider the structure of the object (e.g. bird). First, the bird is segmented
 from the background through manual intervention. This
 foreground is then segmented into smaller regions, each one of which
 approximately covers semantic parts of the bird (e.g. beak, nape etc.), based on
-some offline landmark information provided for each part. Now, feature
+some off-line landmark information provided for each part. Now, feature
 descriptors are computed from these segmented regions, and a codebook is learned
 by pooling the descriptors, which is then used for classification using an SVM.
      
@@ -301,7 +301,7 @@ clearly important with respect to identification of birds.
 \label{subsec:visual}
 
 From a point of view of visual identification, such important aspects can be summarized as: a)
-importantce of considering local parts, b) formulating some objective feature
+importance of considering local parts, b) formulating some objective feature
 definitions on these parts, c) learning discriminative local features, d)
 considering the structure and the relationship between the local parts, e)
 importance of alignment, f) considering the availability of landmarks or manual
@@ -314,7 +314,7 @@ much scope of further explorations on these aspects. Here, we propose and
 briefly discuss some directions which we would like to explore: 
 
 \begin{itemize}
-\item Modelling relationships between all the parts via graphical models: While
+\item Modeling relationships between all the parts via graphical models: While
 individual parts or pair-wise relationships between parts are considered in
 existing methods, higher level relationships between parts are not.
 Thus, a possible direction for further exploration is modeling a higher level
@@ -340,15 +340,15 @@ community.
 of birds, an image 
 is represented as set of local feature vectors. Since the numbers of local
 feature vectors in the set is different for different images, this leads to
-varying length pattern classification. This gives an apportunity to explore the
+varying length pattern classification. This gives an opportunity to explore the
 dynamic kernels~\cite{DK_2003_MK_Wallraven}, that are constructed between the a
 pair of sets of local feature vectors, for FGVC. Some of the popular dynamic
 kernels used in the varying length pattern classification using SVM are
-intermedate matching kernel (IMK)~\cite{IMK_2014_DAD_CC}, pyramid match kernel
+intermediate matching kernel (IMK)~\cite{IMK_2014_DAD_CC}, pyramid match kernel
 (PMK)~\cite{PMK_2007_Grauman}, spacial pyramid match
 kernel~\cite{SPMK_2006_Lazebnik} etc. We can also explore these dynamic kernels
 as similarity measures for matching bird images. This also gives a scope to
-design dymanic kernels specific to FGVC task. 
+design dynamic kernels specific to FGVC task. 
 \end{itemize}
 
 \subsection{Birdsong identification}
@@ -371,7 +371,7 @@ automatic identification of bird calls.
 \item Dynamic kernels for analysis of birdsong: Similar to images, acoustic
 signals are also represented as sets/sequences of local feature vectors. We
 explore dynamic kernels mentioned in the section \ref{subsec:visual} for
-birdsong identification as well as for matching and retrival.  
+birdsong identification as well as for matching and retrieval.  
 
 \end{itemize}
 
