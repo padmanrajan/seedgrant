@@ -43,38 +43,109 @@ Indian Institute of Technology Mandi, India\\
 
 
 %Biodiversity is central to existence of most natural ecosystems \cite{}, and clearly the impact of human settlements (notwithstanding the nobility of their cause) can create disturbances and large variations in the biodiversity. 
-The realization about the importance of biodiversity preservation has provided impetus to the scientific study of ecological systems, including those for monitoring the diversity, populations, distributions etc. \cite{monitor1,monitor2,monitor3,monitor4}. %Some of the primary factors in studying ecosystems is observation and identification \cite{}. 
-The development of such scientific studies occurred well before the common availability of advanced technological aids. Thus, traditionally, the observation and identification process has been manual requiring much time and effort \cite{monitor4,human1,human2}. 
+The realization about the importance of biodiversity preservation has provided
+impetus to the scientific study of ecological systems, including those for
+monitoring the diversity, populations, distributions etc.
+\cite{monitor1,monitor2,monitor3,monitor4}. 
+%Some of the primary factors in studying ecosystems is observation and identification \cite{}. 
+The development of such scientific studies occurred well before the common
+availability of advanced technological aids. Thus, traditionally, the
+observation and identification process has been manual requiring much time and
+effort \cite{monitor4,human1,human2}. 
 
-With the advent of the digital acquisition devices for capturing sights and sounds, the observation aspect has become easier, faster and more reliable. However, the identification component is still largely manual, with experts such as zoologists, ornithologists, botanists etc. manually labeling the acquired data. 
+With the advent of the digital acquisition devices for capturing sights and
+sounds, the observation aspect has become easier, faster and more reliable.
+However, the identification component is still largely manual, with experts such
+as zoologists, ornithologists, botanists etc.~manually labeling the acquired data. 
 
-On the other hand, automated identification, labeling, annotating etc. has become commonplace in various human technological endeavors such as biometrics, surveillance, entertainment, navigation, sports etc. Clearly, given the nature of technical progress in more human-centric domains, it is natural to question the relative lack of automated identification aids in study of ecological systems. 
+On the other hand, automated identification, labeling, annotating etc. has
+become commonplace in various human technological endeavors such as biometrics,
+surveillance, entertainment, navigation, sports etc. Clearly, given the nature
+of technical progress in more human-centric domains, it is natural to question
+the relative lack of automated identification aids in study of ecological
+systems. 
 
-Perhaps, an important concern %for the relatively low amount of research on automatic identification in the ecological domains, could be simply that, seemingly, such areas may not have been thought of as human-centric and hence the research was not need-driven. However, such a perception is now changing, and the importance of biodiversity studies is clearly being realized \cite{}. A more practical reason is the difficulty in data acquisition as compared to the more conventional domains. Importantly, an aspect 
-which makes such research problems technically challenging, is the very large amount of variations in the data. For instance, there are variations in different entities of the same species, and also spatial and temporal variations of the observed entities. This makes it difficult to model or represent each of the relevant classes in a specific problem, or to develop good classification approaches which can handle possible overlapping representations between classes.
+Perhaps, an important concern 
+%for the relatively low amount of research on automatic identification in the ecological domains, could be simply that, seemingly, such areas may not have been thought of as human-centric and hence the research was not need-driven. However, such a perception is now changing, and the importance of biodiversity studies is clearly being realized \cite{}. A more practical reason is the difficulty in data acquisition as compared to the more conventional domains. Importantly, an aspect 
+which makes such research problems technically challenging, is the very large
+amount of variations in the data. For instance, there are variations in
+different entities of the same species, and also spatial and temporal variations
+of the observed entities. This makes it difficult to model or represent each of
+the relevant classes in a specific problem, or to develop good classification
+approaches which can handle possible overlapping representations between
+classes.
 
-Having described the challenges for pattern recognition research in the ecological domains, it must be acknowledged that the situation is not so grim. The evolution of machine learning, vision and speech-acoustics research has yielded some powerful mathematical tools have such as graphical models, sparse learning, and various advanced feature representation and classification frameworks. 
-As hinted above, these have been applied successfully in various areas such as person identification, scene understanding, speech processing and recognition etc., which also involve some of the above discussed concerns about variability and resulting ambiguities. 
+Having described the challenges for pattern recognition research in the
+ecological domains, it must be acknowledged that the situation is not so grim.
+The evolution of machine learning, vision and speech-acoustics research has
+yielded some powerful mathematical tools such as graphical models, sparse
+learning, and various advanced feature representations and classification
+frameworks. 
+As hinted above, these have been applied successfully in various areas such as
+person identification, scene understanding, speech processing and recognition
+etc.~, which also involve some of the above discussed concerns about variability
+and resulting ambiguities. 
 
-Indeed, the applications and adaptations of such frameworks have recently been reported for automatic identification tasks in some domains of ecological interests. Some example domains that employ audio-visual data include identification and classification of birds, butterflies, plants etc., analysis of animal and insect behaviour \cite{leaf,butterfly,hierarchy,poof,brandes_automatedSoundRecording2008}. 
+Indeed, the applications and adaptations of such frameworks have recently been
+reported for automatic identification tasks in some domains of ecological
+interest. Some example domains that employ audio-visual data include
+identification and classification of birds, butterflies, plants etc.~, analysis
+of animal and insect behaviour
+\cite{leaf,butterfly,hierarchy,poof,brandes_automatedSoundRecording2008}. 
 
-However, in general, such research is still in its nascent stages, and has much scope for improvements in accuracy and variety of scenarios. At the same time it also provides much scope of intellectually challenging technical progress in terms of developing new tools and frameworks, or adapting existing ones, so as to address the new challenges. Another important perspective is that such research can lead to possibilities of some system development, which we will elaborate on subsequently. Some basic forms of such systems (e.g. website or applications on mobile devices for data collection and analysis) have been setup in recent years (e.g. \cite{birdsnap}). However, from a regional point of view, such systems largely focus on the data from the western world, and there is enough scope to develop similar or better systems for the Indian scenario. 
+However, in general, such research is still in its nascent stages, and has much
+scope for improvements in accuracy and the variety of scenarios. At the same time it
+also provides much scope of intellectually challenging technical progress in
+terms of developing new tools and frameworks, or adapting existing ones, so as
+to address the new challenges. Another important perspective is that such
+research can lead to possibilities of some system development, which we will
+elaborate on subsequently. Some basic forms of such systems (e.g. website or
+applications on mobile devices for data collection and analysis) have been setup
+in recent years (e.g. \cite{birdsnap}). However, from a regional point of view,
+such systems largely focus on the data from the western world, and there is
+enough scope to develop similar or better systems for the Indian scenario. 
 
-Having provided a general perspective, we acknowledge that each ecological domain and the problems therein requires quite different approaches. In this proposal, we focus on the problem of the detecting and classification of birds. Our interest in considering this problem stems from the following reasons: 
+Having provided a general perspective, we acknowledge that each ecological
+domain and the problems therein requires quite different approaches. In this
+proposal, we focus on the problem of the detecting and classification of birds.
+Our interest in considering this problem stems from the following reasons: 
+
 \begin{itemize}
-\item Our primary motivation to consider this problem is the challenge that it poses in terms of the variety and necessarily unstructured nature of the data. While, as indicated above, interest in this area has been growing, the performance on existing approaches is very modest due to such practical challenges. 
-\item The varied nature of real data, in turn, brings about various technical challenges such as exploring ways to extract/learn the discriminative features, considering and modeling the local inter-relationships between visual bird-body parts, developing frameworks which yields high similarity between similar species, and making the failure cases to be graceful (i.e. more among similar species and less as the specific difference increases), etc. 
-\item We are also motivated to consider this problem from the perspective of using both visual and acoustic modalities, which to our knowledge, has not been reported. We believe that sight and sound, in the task of bird detection and identification will compliment each other well and can be an important towards improving the performance. 
+
+\item Our primary motivation to consider this problem is the challenge that it
+poses in terms of the variety and necessarily unstructured nature of the data.
+While, as indicated above, interest in this area has been growing, the
+performance on existing approaches is very modest due to such practical
+challenges. 
+
+\item The varied nature of real data, in turn, brings about various technical
+challenges such as exploring ways to extract/learn the discriminative features,
+considering and modeling the local inter-relationships between visual bird-body
+parts, developing frameworks which yields high similarity between similar
+species, and making the failure cases to be graceful (i.e. more among similar
+species and less as the specific difference increases), etc. 
+
+\item We are also motivated to consider this problem from the perspective of
+using both visual and acoustic modalities, which to our knowledge, has not been
+reported. We believe that sight and sound, in the task of bird detection and
+identification will compliment each other well and can be an important towards
+improving the performance. 
+
 \item Clearly, central to the problem is the availability of data in terms of
 images/videos and sounds. Some standard public datasets for this purpose are
 available for the purpose of benchmarking (e.g. \cite{cub}). However, these are
 rather limited and region-specific to the western world (e.g. North America).
 Also, there is further need for more realism in terms of scale, pose,
-illumination variations in terms of visual data and background noise in terms of acoustic data. Thus, over the course of this this project, we also plan to collect data for Indian birds, both in terms of sight and sounds, and make it publicly available.
+illumination variations in terms of visual data and background noise in terms of
+acoustic data. Thus, over the course of this this project, we also plan to
+collect data for Indian birds, both in terms of sight and sounds, and make it
+publicly available.
+
 \end{itemize}
  
 \subsection{Objectives}
-Based on the above discussions, we formulate below, some specific objectives. We provide more details on these in section 3.  
+Based on the above discussions, we formulate below, some specific objectives. We
+provide more details on these in section 3.  
 \begin{enumerate}
 \item Research and algorithm development for detection and identification of
 birds from images and videos.
@@ -83,28 +154,85 @@ birds from acoustic data.
 \item Integration of 1.~and 2.~above, into a common approach which can process audio-visual data. 
 \item Constructing datasets of local bird species and making these available to the research community.
 \item Eventually, establishing a web-based system which can use the automated
-approaches, with some manual intervention, for further data collection and management, resulting in continuous improvements.
+approaches, with some manual intervention, for further data collection and
+management, resulting in continuous improvements.
 \end{enumerate}
 
 \section{Related work}
-As mentioned above, the last few years has seen some modest but conscious effort towards addressing the problem of automatic classification of birds. We briefly discuss below, some related work, in the visual and acoustic domains.
+As mentioned above, the last few years has seen some modest but conscious effort
+towards addressing the problem of automatic classification of birds. We briefly
+discuss below, some related work, in the visual and acoustic domains.
 
 \subsection{Fine-grained visual classification for bird identification}
-From a visual point of view, the automated identification of bird species is one of the important problems considered in an upcoming sub-area of fine-grained visual classification (FGVC) in computer vision. Here, the term `fine-grained' signifies that such classification problems are different (and, arguably, harder) than the traditional visual classification problems. The latter consists of classification at a coarser level of different object entities (e.g. type of vehicle, objects, animals etc.), whereas FGVC is concerned about classification within different species of a particular entity (e.g. car models, bird species etc.).
+From a visual point of view, the automated identification of bird species is one
+of the important problems considered in an upcoming sub-area of fine-grained
+visual classification (FGVC) in computer vision. Here, the term `fine-grained'
+signifies that such classification problems are different (and, arguably,
+harder) than the traditional visual classification problems. The latter consists
+of classification at a coarser level of different object entities (e.g. type of
+vehicle, objects, animals etc.), whereas FGVC is concerned about classification
+within different species of a particular entity (e.g. car models, bird species
+etc.).
 
-One of the fundamental aspects in automated classification problems is the \emph{representation} of the entities different classes, in some objective terms (or features) such as shape, texture etc. Clearly, in case of FGVC, global representations of an entity such as the overall shape, morphology, geometry, texture etc. will not be useful for the classification task, since entities belonging to different classes would yield similar global representations. 
+One of the fundamental aspects in automated classification problems is the
+\emph{representation} of the entities in different classes, in some objective
+terms (or features) such as shape, texture etc. Clearly, in case of FGVC, global
+representations of an entity such as the overall shape, morphology, geometry,
+texture etc. will not be useful for the classification task, since entities
+belonging to different classes would yield similar global representations. 
 
-Hence, a more logical philosophy followed in existing approaches for FGVC is that of considering the representation at a local level. These are typically termed as part-based approaches \cite{dpm,hierarchy,poof,random,codebookfree}, wherein representative features are extracted from local parts of birds, and these features are then used for further modelling or classification.  
+Hence, a more logical philosophy followed in existing approaches for FGVC is
+that of considering the representation at a local level. These are typically
+termed as part-based approaches \cite{dpm,hierarchy,poof,random,codebookfree},
+wherein representative features are extracted from local parts of birds, and
+these features are then used for further modelling or classification.  
 
-For instance, in the work of \cite{random}, a variety of rectangular patches of various widths and heights are sampled, and some features (e.g. SIFT, HOG \cite{random,poof}) are extracted from these patches. Then, the approach involves capturing the most discriminative patches, or pairs of patches, using a random forest classifier. Another work \cite{codebookfree} also extracts features from a variety of rectangular patches (templates), but then follows a different direction, of computing response maps by matching each training image with the templates from all the images. Some local regions from these response maps are then pooled to form histograms, which are then used for classification via an support vector machine (SVM). The rationale behind this is that templates from a bird species is more likely to match similar bird species than the other. In these methods, there is no consideration of the structure or the relationship of the parts of the object, and there is also a possibility of including some background regions in the rectangular patches, while computing the features. 
+For instance, in the work of \cite{random}, a variety of rectangular patches of
+various widths and heights are sampled, and some features (e.g. SIFT, HOG
+\cite{random,poof}) are extracted from these patches. Then, the approach
+involves capturing the most discriminative patches, or pairs of patches, using a
+random forest classifier. Another work \cite{codebookfree} also extracts
+features from a variety of rectangular patches (templates), but then follows a
+different direction of computing response maps by matching each training image
+with the templates from all the testing images. Some local regions from these response
+maps are then pooled to form histograms, which are then used for classification
+via an support vector machine (SVM). The rationale behind this is that templates
+from a bird species is more likely to match similar bird species than the other.
+In these methods, there is no consideration of the structure or the relationship
+of the parts of the object, and there is also a possibility of including some
+background regions in the rectangular patches, while computing the features. 
 
-In another work \cite{hierarchy}, a semi-automatic approach is followed to consider the structure of the object (e.g. bird). First, an method which uses a small manual interaction is used to segment the bird from the background. This foreground is then segmented into smaller regions, each one of which approximately covers semantic parts of the bird (e.g. beak, nape etc.), based on some offline landmark information provided for each part. Now, feature descriptors are computed from these segmented regions, and a codebook is learned by pooling the descriptors, which is then used for classification using an SVM.
+In another work \cite{hierarchy}, a semi-automatic approach is followed to
+consider the structure of the object (e.g. bird). First, the bird is segmented
+from the background through manual intervention. This
+foreground is then segmented into smaller regions, each one of which
+approximately covers semantic parts of the bird (e.g. beak, nape etc.), based on
+some offline landmark information provided for each part. Now, feature
+descriptors are computed from these segmented regions, and a codebook is learned
+by pooling the descriptors, which is then used for classification using an SVM.
      
-Realizing the importance of learning the most discriminative local features (which to some extent was attempted in \cite{hierarchy} on unstructured patches), the authors in \cite{poof}, propose to do the same at the level of semantic features. Here, too the features (e.g. histogram of gradients etc.) are extracted from patches, but the patches are structured around the points denoted by landmarks. The discriminative regions are learned for every two classes, based on the features in those regions, using an SVM, where the SVM also assign weights to each of the region. Also, important in this work is the notion of alignment of the regions across images (by scaling and rotating), based on the landmark points. This is important so that the regions from which the features are extracted coincide approximately in each image. 
+Realizing the importance of learning the most discriminative local features
+(which to some extent was attempted in \cite{hierarchy} on unstructured
+patches), the authors in \cite{poof}, propose to do the same at the level of
+semantic features. Here, too the features (e.g. histogram of gradients etc.) are
+extracted from patches, but the patches are structured around the points denoted
+by landmarks. The discriminative regions are learned for every two classes,
+based on the features in those regions using an SVM. Also, important in this work is the notion of
+alignment of the regions across images (by scaling and rotating), based on the
+landmark points. This is important so that the regions from which the features
+are extracted coincide approximately in each image. 
 
-The importance of image alignment for FGVC of birds is also stressed in \cite{align}. In this work, the alignment is based on a global feature, viz. an ellipse fitting on the bird shape. The alignment is then used to transfer the local features and annotated landmarks of all images onto a common reference frame.  
+The importance of image alignment for FGVC of birds is also stressed in
+\cite{align}. In this work, the alignment is based on a global feature, viz. an
+ellipse fitting on the bird shape. The alignment is then used to transfer the
+local features and annotated landmarks of all images onto a common reference
+frame.  
 
-In another interesting work \cite{crow}, the primary goal is not the classification, but to translate the objective and mathematically defined features used in FGVC to semantic discriminative body parts, so as to form a visual guidebook to know what discriminative parts to look for. The objective features used in this work are those proposed in \cite{poof}.
+In another interesting work \cite{crow}, the primary goal is not the
+classification, but to translate the objective and mathematically defined
+features used in FGVC to semantic discriminative body parts, so as to form a
+visual guidebook to know what discriminative parts to look for. The objective
+features used in this work are those proposed in \cite{poof}.
  
 \subsection{Bio-acoustic signal analysis for bird identification}
 
@@ -115,8 +243,9 @@ birds is one of the primary ways by which make their presence known to one
 another. 
 %Birds serve as important indicators of the health of ecosystems, and
 %surveying bird populations can provide valueable inputs for conservation efforts.
-Recently, automatic monitoring of bird populations by means of pattern
-classification algorithms have received much attention. Most birds have
+%Recently, automatic monitoring of bird populations by means of pattern
+%classification algorithms have received much attention. 
+Most birds have
 distinctive calls, which can be used to identify a particular species. Automatic
 birdsong analysis provides several problems for the development of novel machine learning
 and signal processing algorithms.
@@ -172,10 +301,10 @@ clearly important with respect to identification of birds.
 \label{subsec:visual}
 
 From a point of view of visual identification, such important aspects can be summarized as: a)
-Important of considering local parts, b) formulating some objective feature
-definitions on these parts, c) learning most discriminative local features, d)
-Considering the structure and the relationship between the local parts, e)
-Importance of alignment, f) considering the availability of landmarks or manual
+importantce of considering local parts, b) formulating some objective feature
+definitions on these parts, c) learning discriminative local features, d)
+considering the structure and the relationship between the local parts, e)
+importance of alignment, f) considering the availability of landmarks or manual
 annotations. 
 
 Some of the these aspects (e.g. a, b) are considered  in all of the existing
@@ -195,21 +324,31 @@ other contexts in computer vision (e.g. \cite{mrfpose}).
 
 \item Considering cases with or without landmarks/annotations: In a real-world
 scenario, often we may not have annotations (or manual part marking). Thus, it
-would be useful to develop methods for the task of bird detection, segmentation,  
-automatic part identification or annotation. Interestingly, this problem has not been considered in any of the
-existing works. These may be seen as a unsupervised low-level feature detection
-or segmentation problem, or learning the segmentation labels or feature
-characteristics from a high confidence landmarked or annotated examples.
+would be useful to develop methods for the task of bird detection, segmentation,
+automatic part identification or annotation. Interestingly, this problem has not
+been considered in any of the existing works. These may be seen as a
+unsupervised low-level feature detection or segmentation problem, using a set of
+landmarked or annotated examples.
 
-\item Comparative analysis between low-level feature descriptor: There is no
+\item Comparative analysis between low-level feature descriptors: There is no
 standardization or review yet for FGVC of birds. In would be interesting and
 informative, as a part of this project to work on such an exhaustive survey,
 especially also because the area is gaining popularity in the vision and speech
 community.
 
-\item Dynamic kernels for fine-grained pattern analysis: For the efficient FGVC of birds, the images are represented using local features. As a result an image is represented as set of local feature vectors. Since the numbers of local feature vectors in
-the set is different for different images, this leads to varying length pattern
-classification. This gives an apportunity to explore the dynamic kernels~\cite{DK_2003_MK_Wallraven}, that are constructed between the a pair of sets of local feature vectors, for FGVC. Some of the popular dynamic kernels used in the varying length pattern classification using SVM are intermedate matching kernel (IMK)~\cite{IMK_2014_DAD_CC}, pyramid match kernel (PMK)~\cite{PMK_2007_Grauman}, spacial pyramid match kernel~\cite{SPMK_2006_Lazebnik} etc. We can also explore these dynamic kernels as similarity measures for matching bird images. This also give a scope to design dymanic kernels specific to FGVC task. 
+\item Dynamic kernels for fine-grained pattern analysis: For the efficient FGVC
+of birds, an image 
+is represented as set of local feature vectors. Since the numbers of local
+feature vectors in the set is different for different images, this leads to
+varying length pattern classification. This gives an apportunity to explore the
+dynamic kernels~\cite{DK_2003_MK_Wallraven}, that are constructed between the a
+pair of sets of local feature vectors, for FGVC. Some of the popular dynamic
+kernels used in the varying length pattern classification using SVM are
+intermedate matching kernel (IMK)~\cite{IMK_2014_DAD_CC}, pyramid match kernel
+(PMK)~\cite{PMK_2007_Grauman}, spacial pyramid match
+kernel~\cite{SPMK_2006_Lazebnik} etc. We can also explore these dynamic kernels
+as similarity measures for matching bird images. This also gives a scope to
+design dymanic kernels specific to FGVC task. 
 \end{itemize}
 
 \subsection{Birdsong identification}
@@ -229,7 +368,10 @@ formant information. Features that capture formant information (eg.~group delay
 based representations \cite{padmanAllPoleGDelay, hegdeModgdf}) show great potential in
 automatic identification of bird calls.
 
-\item Dynamic kernels for analysis of birdsong: Similar to images, acoustic signals are also represented as sets/sequences of local feature vectors. We explore dynamic kernels mentioned in the section \ref{subsec:visual} for birdsong identification as well as for matching and retrival.  
+\item Dynamic kernels for analysis of birdsong: Similar to images, acoustic
+signals are also represented as sets/sequences of local feature vectors. We
+explore dynamic kernels mentioned in the section \ref{subsec:visual} for
+birdsong identification as well as for matching and retrival.  
 
 \end{itemize}
 
@@ -262,7 +404,8 @@ Thus, based on the above discussion about various directions, we summarize the
 methodological aspects of our proposal: 
 
 \begin{itemize}
-	\item Feature selection and feature detection/segmentation/annotation (the latter in case of non-annotated data) 
+	\item Feature selection and region-of-interest
+	detection/segmentation/annotation (the latter in case of non-annotated data)
 	for image and acoustic data. 
     \item Classification of birds from images using different features and classifiers.  
     \item Classify the birds from their sounds using different features and classifiers.    
@@ -351,17 +494,17 @@ Total & 24.0 \\
 %%% Arnavs bib begins here
 
 \bibitem{monitor1}
-G. Witmer., 
+G. Witmer, 
 Wildlife population monitoring: Some practical considerations,
 \emph{Wildlife Research}, 32, pp. 259--263, 2005. 
 
 \bibitem{monitor2}
-M. Bose., 
+M. Bose, 
 Common bird monitoring of India: A novel citizen science program, 
 \emph{Science Reporter}, pp. 28--31, 2012. 
 
 \bibitem{monitor3}
-M. Ancrenaz, A.J. Hearn, J. Ross, R. Sollmann, A. Wilting., 
+M. Ancrenaz, A. J. Hearn, J. Ross, R. Sollmann, A. Wilting, 
 Handbook for wildlife monitoring using camera-traps,
 \emph{BBEC Publication}, 2012. 
 
@@ -370,59 +513,59 @@ Annual report,
 \emph{Cornell Lab of Ornithology}, 2011.
 
 \bibitem{human1} 
-M. Chesser., 
+M. Chesser, 
 An investigation of human-error rates in wildlife photographic identification; 
 Implications for the use of citizen scientists, 
 \emph{Masters Theses, University of Massachusetts Amherst}, 2012. 
 
 \bibitem{human2} 
-N.J. Silvy, R.R. Lopez, M.J. Peterson., 
+N. J. Silvy, R. R. Lopez, M. J. Peterson, 
 Wildlife marking techniques, 
 \emph{Techniques for Wildlife Investigations and Management. Bethesda: The
 Wildlife Society},
 pp. 339--363, 2005. 
 
 \bibitem{poof} 
-T. Berg, P. Belhumeur., 
+T. Berg, P. Belhumeur, 
 POOF: Part-based one-vs-one features for fine-grained categorization, 
 face verification, and attribute estimation,
 \emph{IEEE International Conference on Computer Vision and Pattern Recognition},
 pp. 955--962, 2013. 
 
 \bibitem{crow} 
-T. Berg, P. Belhumeur., 
+T. Berg, P. Belhumeur, 
 How do you tell a blackbird from a crow?, 
 \emph{IEEE International Conference on Computer Vision},
 pp. 729--736, 2014. 
 
 \bibitem{dpm} 
-N. Zhang, R. Farrell, F. Iandola, T. Darrell., 
+N. Zhang, R. Farrell, F. Iandola, T. Darrell, 
 Deformable part descriptors for fine-grained recognition and attribute prediction, 
 \emph{IEEE International Conference on Computer Vision}, 2014. 
 
 \bibitem{align} 
-E. Gavves, B. Fernando, C. Snoek, A. Smeulders, T. Tuytelaars., 
+E. Gavves, B. Fernando, C. Snoek, A. Smeulders, T. Tuytelaars, 
 Fine-grained categorization by alignments, 
 \emph{IEEE International Conference on Computer Vision}, 2013. 
 
 \bibitem{hierarchy} 
-L. Xie, Q. Tian, R. Hong, S. Yan, B. Zhang., 
+L. Xie, Q. Tian, R. Hong, S. Yan, B. Zhang, 
 Hierarchical part matching for fine-grained visual categorization, 
 \emph{IEEE International Conference on Computer Vision}, 2013. 
 
 \bibitem{codebookfree} 
-B. Yao, G. Bradski, L. Fei-Fei., 
+B. Yao, G. Bradski, L. Fei-Fei, 
 A codebook-free and annotation-free approach for fine-grained image categorization, 
 \emph{IEEE International Conference on Computer Vision and Pattern Recognition},
 2012. 
 
 \bibitem{random} 
-B. Yao, A. Khosla, L. Fei-Fei., 
+B. Yao, A. Khosla, L. Fei-Fei, 
 Combining randomization and discrimination for fine-grained image categorization,
 \emph{IEEE International Conference on Computer Vision and Pattern Recognition}, 2011. 
 
 \bibitem{cub} 
-P. Welinder, S. Branson, T. Mita, C. Wah, F. Schroff, S. Belongie, P. Perona. 
+P. Welinder, S. Branson, T. Mita, C. Wah, F. Schroff, S. Belongie, P. Perona 
 Caltech-UCSD Birds 200, 
 \emph{Technical Report, California Institute of Technology},
 CNS-TR-2010-001, 2010. 
@@ -433,54 +576,54 @@ BIRDSNAP: An Electronic Field Guide to Birds, \url{www.birdsnap.com},
 2014. 
 
 \bibitem{leaf} 
-S.G. Wu, F.S. Bao, E.Y. Xu, Y. Wang, Y. Chang, Q. Xiang.,
+S. G. Wu, F. S. Bao, E. Y. Xu, Y. Wang, Y. Chang, Q. Xiang,
 A leaf recognition algorithm for plant classification using probabilistic neural network,
 \emph{International Symposium on Signal Processing and Information Technology}, 2007. 
 
 \bibitem{butterfly} 
-J. Wang, K. Markert, M. Everingham., 
+J. Wang, K. Markert, M. Everingham, 
 Learning models for object recognition from natural language descriptions, 
 \emph{British Machine Vision Conference}, 2009. 
 
 \bibitem{mrfbook} 
-S.Z. Li., Markov random field modeling in computer vision, 
+S. Z. Li, Markov random field modeling in computer vision, 
 \emph{Springer-Verlag}, 1995. 
 
 \bibitem{mrf} 
-P. Kohli, C. Rother., 
+P. Kohli, C. Rother, 
 Higher-order models in Computer Vision, 
 \emph{O. Lezoray, L. Grady. (Eds.),
 Image Processing and Analysing Graphs: Theory and Practice, CRC Press},
 2012. 
 
 \bibitem{hmrf} 
-C. Wang., 
+C. Wang, 
 Distributed and higher-order graphical models, 
 \emph{PhD Thesis, Ecole Centrale Paris,} 2011.
 
 \bibitem{crf} 
-X. He, R. Zemel, M.Carreira-Perpinan., 
+X. He, R. Zemel, M. Carreira-Perpinan, 
 Multiscale conditional random fields for image labeling, 
 \emph{IEEE International Conference on Computer Vision and Pattern Recognition},
 2004. 
 
 \bibitem{crf1} 
-J. Verbeek and B. Triggs., 
+J. Verbeek and B. Triggs, 
 Scene segmentation with conditional random fields learned from partially labeled images, 
 \emph{Conference on Neural Information Processing Systems}, 2007. 
 
 \bibitem{mrfpose} 
-M. Bray, P. Kohli, P. Torr., 
+M. Bray, P. Kohli, P. Torr, 
 PoseCut: Simultaneous segmentation and 3D pose estimation of humans using dynamic graph-cuts,
 \emph{European Conference on Computer Vision}, 2006. 
 
 \bibitem{sparse} 
-J. Wright, A.Y. Yang, A. Ganesh, S. Sastry, Y. Ma., 
+J. Wright, A.Y. Yang, A. Ganesh, S. Sastry, Y. Ma, 
 Robust face recognition via sparse representation, 
 \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, 2009. 
 
 \bibitem{sparse1} 
-R. Rigamonti, M.A. Brown, V. Lepetit., 
+R. Rigamonti, M. A. Brown, V. Lepetit, 
 Are sparse representations really relevant for image classification?, 
 \emph{IEEE International Conference on Computer Vision and Pattern Recognition},
 2011. 
@@ -495,49 +638,44 @@ R. Duda, P. Hart, D. Stark., Pattern Classification,
 %% Dileep's bib begins here
 
 \bibitem{DK_2003_MK_Wallraven}
-Christian Wallraven and Barbara Caputo and Arnulf Graf,
+C. Wallraven and B. Caputo and A. Graf,
 Recognition with Local Features: The Kernel Recipe,
 \emph{Proceedings of the Ninth IEEE International Conference on Computer Vision},
 2003
 
 
 \bibitem{IMK_2014_DAD_CC} 
-Dileep, A.D. and Chandra Sekhar, C., 
+A. D. Dileep and C. Chandra Sekhar, 
 {GMM}-Based Intermediate Matching Kernel for Classification of Varying Length 
 Patterns of Long Duration Speech Using Support Vector Machines, 
 \emph{IEEE Transactions on Neural Networks and Learning Systems}, 25(8),
 2014. 
 
-\bibitem{PMK_2007_Grauman},
-Kristen Grauman and Trevor Darrell,
+\bibitem{PMK_2007_Grauman}
+K. Grauman and T. Darrell,
 The Pyramid Match Kernel: Efficient Learning with Sets of Features,
-\emph{"Journal of Machine Learning Research},
+\emph{Journal of Machine Learning Research},
 8, 2007
 
 \bibitem{SPMK_2006_Lazebnik} 
-Lazebnik, S. and Schmid, C. and Ponce, J.,
+S. Lazebnik and C. Schmid and J. Ponce,
 Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories, 
-\emph{IEEE Computer Society Conference on Computer Vision and Pattern Recognition}, 
+\emph{IEEE International Conference on Computer Vision and Pattern Recognition}, 
 2006
 
 
 \bibitem{LargeScaleMKL}
-S\"{o}ren Sonnenburg and Gunnar R\"{a}tsch and Christin Sch\"{a}fer and Bernhard Sch\"{o}lkopf,
+S. Sonnenburg and G. R\"{a}tsch and C. Sch\"{a}fer and B. Sch\"{o}lkopf,
 Large Scale Multiple Kernel Learning,
 \emph{Journal of Machine Learning Research},
  7, 2006
 
-\bibitem{mkl2},
+\bibitem{mkl2}
 A. Rakotomamonjy, F. R. Bach, S. Canu, and Y. Grandvalet, 
-SimpleMKL,
+Simple{MKL},
 \emph{Journal of Machine Learning Research}, 
 9, 2008.
 
-\bibitem{simpleMKL},
-A. Rakotomamonjy and F. R. Bach and S. Canu and Y. Grandvalet,
-Simple{MKL},
-\emph{Journal of Machine Learning Research},
- 9, 2008
 
 
 
@@ -552,89 +690,87 @@ Simple{MKL},
 
 %%%%% Paddys bib begins here
 \bibitem{brandes_automatedSoundRecording2008}
-Scott Brandes, T, Automated sound recording and analysis techniques for
+T. S. Brandes,  Automated sound recording and analysis techniques for
 bird surveys and conservation, \emph{Bird Conservation International}, S1:18, 2008
 
 \bibitem{kirschel_territorial2011}
-Kirschel, Alexander NG and Cody, Martin L and Harlow, Zachary T and Promponas,
-Vasilis J and Vallejo, Edgar E and Taylor, Charles E,
-Territorial dynamics of Mexican Ant-thrushes Formicarius moniliger revealed by
+A. Kirschel and M. Cody and Z. Harlow, and V. J. Promponas,
+and E. Vallejo and C. E. Taylor,
+Territorial dynamics of Mexican ant-thrushes Formicarius moniliger revealed by
 individual recognition of their songs, \emph{Ibis}, 2:153, 2010
 
 \bibitem{dehak_ivector}
-Dehak, N. and Kenny, P. and Dehak, R. and Dumouchel, P. and Ouellet, P.,
+N. Dehak, and P. Kenny and R. Dehak and P. Dumouchel and P. Ouellet,
 \emph{IEEE Trans. Audio, Speech Lang. Process.}, 19:4, 2011
 
 \bibitem{padmanAllPoleGDelay}
-Rajan, Padmanabhan and Kinnunen, Tomi and Hanilci, Cemal and Pohjalainen, J and Alku, P
+P. Rajan, and T. Kinnunen and C. Hanilci and J. Pohjalainen and P. Alku, 
 Using group delay functions from all-pole models for speaker recognition,
 \emph{Proc. Interspeech}, 2013
 
-\bibitem{hegdeModgdf},
+\bibitem{hegdeModgdf}
 Significance of the Modified Group Delay Feature in Speech Recognition,
-Hegde, R. M. and Murthy, H. A. and Gadde, V. R.,
+R. M. Hegde, and H. A. Murthy and V. R. Gadde,
 \emph{IEEE Trans. Audio, Speech, Lang. Process.},
 15:1, 2007
 
 \bibitem{somervuo_parametric2006}
-Somervuo, Panu and Harma, Aki and Fagerlund, Seppo,
+P. Somervuo and A. Harma and S. Fagerlund,
 Parametric representations of bird sounds for automatic species recognition,
 \emph{IEEE Trans. Audio, Speech Lang. Process.}, 14:6, 2006
 
 
 \bibitem{tyagi_spectralEnsemble2006}
-Tyagi, Hemant and Hegde, Rajesh M and Murthy, Hema A and Prabhakar, Anil
+H. Tyagi, and R. M. Hegde and H. A. Murthy and A. Prabhakar,
 Automatic identification of bird calls using spectral ensemble average voice prints
 \emph{Proc. EUSIPCO}, 2006
 
 \bibitem{graciarena_acousticFrontEnd2010}
-Graciarena, Martin and Delplanche, Michelle and Shriberg, Elizabeth and Stolcke, Andreas and Ferrer, Luciana
+M. Graciarena, and M. Delplanche, and E. Shriberg, and A. Stolcke, and L. Ferrer, 
 Acoustic front-end optimization for bird species recognition,
 \emph{Proc. ICASSP}, 2010
 
 \bibitem{tan_sparse2012}
-Tan, Lee Ngee and Kaewtip, Kantapon and Cody, Martin L and Taylor, Charles E and
-Alwan, Abeer,
+L. N. Tan, L. Ngee and K. Kaewtip and M. Cody and C. Taylor, and A. Alwan,
 Evaluation of a Sparse Representation-Based Classifier For Bird Phrase
 Classification Under Limited Data Conditions,
 \emph{Proc. Interspeech}, 2012
 
 \bibitem{lopes_largeSpecies2011}
-Lopes, Marcelo Teider and Gioppo, Lucas L and Higushi, Thiago T and Kaestner,
-Celso AA and Silla, CN and Koerich, Alessandro L,
+M. Lopes and L. Gioppo and T. Higushi and C. Kaestner, and C. Silla 
+and A. Koerich, 
 Automatic bird species identification for large number of species,
 \emph{IEEE International Symposium Multimedia}, 2011
 
 \bibitem{chu_hmmBird2011}
-Chu, Wei and Blumstein, Daniel T
+W. Chu, and D. Blumstein
 Noise robust bird song detection using syllable pattern-based hidden {M}arkov
 models,
 \emph{Proc. ICASSP}, 2011
 
 \bibitem{graciarena_acousticSequence2011}
-Graciarena, Martin and Delplanche, Michelle and Shriberg, Elizabeth and Stolcke,
-Andreas,
+M. Graciarena, and M. Delplanche, and E. Shriberg, and A. Stolcke,
 Bird species recognition combining acoustic and sequence modeling,
 \emph{Proc. ICASSP}, 2011
 
 \bibitem{wang_entropyBird2013}
-Wang, Ni-Chun and Hudson, Ralph E and Tan, Lee Ngee and Taylor, Charles E and Alwan, Abeer and Yao, Kung
+N. Wang, and R. Hudson and L. Tan and C. Taylor and A. Alwan and K. Yao
 Bird phrase segmentation by entropy-driven change point detection,
 \emph{Proc. ICASSP}, 2013
 
 \bibitem{lee_gmmImageShape2013}
-Lee, Chang-Hsing and Hsu, Sheng-Bin and Shih, Jau-Ling and Chou, Chih-Hsun,
+C. Lee and S. Hsu and J. Shih and C. Chou, 
 Continuous birdsong recognition using Gaussian mixture modeling of image shape features
 \emph{IEEE Trans. Multimedia}, 2013
 
 \bibitem{mporas_automatedAcoustic2012}
-Mporas, Iosif and Ganchev, Todor and Kocsis, Otilia and Fakotakis, Nikos and
-Jahn, Olaf and Riede, Klaus and Schuchmann, Karl-L,
+I. Mporas and T. Ganchev and O. Kocsis and N. Fakotakis and
+O. Jahn and K. Riede and K. Schuchmann, 
 Automated Acoustic Classification of Bird Species from Real-Field Recordings,
 \emph{Proc. IEEE Conf.~Tools with Artificial Intelligence}, 2012
 
 \bibitem{neal_timeFreq2011}
-Neal, Lawrence and Briggs, Forrest and Raich, Raviv and Fern, Xiaoli Z,
+L. Neal, and F. Briggs, and R. Raich and X. Fern,
 Time-frequency segmentation of bird song in noisy acoustic environments,
 \emph{Proc. ICASSP}, 2011
 
