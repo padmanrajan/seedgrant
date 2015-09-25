@@ -2,6 +2,7 @@
 %\bibliographystyle{splncs}
 \usepackage[dvips]{graphicx}
 \usepackage{url}
+\usepackage{tablefootnote}
 % comment
 % comment 2
 \evensidemargin 0.1cm 
@@ -11,7 +12,7 @@
 \headheight -0.5in 
 \headsep 0in 
 \textheight 10in 
-\footskip 0.3in
+%\footskip 0.3in
 %\footheight 0.1in 
 
 \renewcommand{\baselinestretch}{1.5} 
@@ -25,10 +26,16 @@ School of Computing and Electrical Engineering\\
 Indian Institute of Technology Mandi, India\\
 \texttt{\{arnav, addileep, padman\}@iitmandi.ac.in}}
 
-\date{}
+%\date{}
 \maketitle
 %\begin{abstract}
 %\end{abstract}
+
+\section*{Revision}
+
+This is a revised version of the proposal, incorporating the comments made by
+the external reviewers and the evaluation committie. The budget is modified in
+this version of the document.
 
 \section{Introduction}
 
@@ -472,17 +479,18 @@ An estimate of the funding for the project is given in Table \ref{tab:funding}.
 \begin{table}[th]
 \centering
 \caption{Table of projected expenses. All amounts in lakhs INR.}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
 Items & Amount (Year 1) & Amount (Year 2) & Amount (Year 3) & Total\\
 \hline
-High-end computers (4) & 9.0 & 3.0 & 0 & 12.0\\
-Imaging and audio equipment & 0 & 4.0 & 0 & 4.0 \\
-Desktop computers (6) & 5.0 & 0 & 0 & 5.0  \\
+Manpower (2) & 4.0 & 4.0 & 4.0 & 12.0 \\
+Imaging and audio equipment & 5.0 & 3.0 & 0.0 & 8.0 \\
+High-end computers\tablefootnote{Will be contributed to the institute HPC facility.} (2) & 3.0 & 3.0 & 0 & 6.0\\
+Desktop computers (6) & 5.0 & 0.0 & 0 & 5.0  \\
 Contingency & 0.5 & 0.5 & 1.0 & 2.0 \\
 Travel & 0.5 & 0.5 & 1.0 & 2.0\\
 \hline
-Overall & 15.0 & 8.0 & 2.0 & \textbf{25.0} \\
+Overall & 18.0 & 11.0 & 6.0 & \textbf{35.0} \\
 \hline
 \end{tabular}
 \label{tab:funding}
